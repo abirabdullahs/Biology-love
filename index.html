@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বায়োলজির ভালোবাসা 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            font-size: 20px;
+            animation: float 8s infinite ease-in-out;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-120vh) translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 60px 50px;
+            border-radius: 40px;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4);
+            animation: slideUp 1.2s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            background: linear-gradient(135deg, #e74c3c, #c0392b, #e74c3c);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGradient 3s ease infinite, pulse 2s ease-in-out infinite;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes textGradient {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #7f8c8d;
+            font-weight: 400;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .verse {
+            margin: 35px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 218, 224, 0.3));
+            border-radius: 20px;
+            border-left: 5px solid #e74c3c;
+            animation: slideInRight 1s ease-out;
+            animation-fill-mode: both;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .verse::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .verse:hover::before {
+            left: 100%;
+        }
+
+        .verse:hover {
+            transform: translateX(10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+        }
+
+        .verse:nth-child(1) { animation-delay: 0.2s; }
+        .verse:nth-child(2) { animation-delay: 0.4s; }
+        .verse:nth-child(3) { animation-delay: 0.6s; }
+        .verse:nth-child(4) { animation-delay: 0.8s; }
+        .verse:nth-child(5) { animation-delay: 1s; }
+        .verse:nth-child(6) { animation-delay: 1.2s; }
+        .verse:nth-child(7) { animation-delay: 1.4s; }
+        .verse:nth-child(8) { animation-delay: 1.6s; }
+        .verse:nth-child(9) { animation-delay: 1.8s; }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .verse p {
+            font-size: 1.8em;
+            line-height: 2;
+            color: #2c3e50;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            animation: colorShift 3s ease infinite;
+        }
+
+        @keyframes colorShift {
+            0%, 100% {
+                filter: hue-rotate(0deg);
+            }
+            50% {
+                filter: hue-rotate(20deg);
+            }
+        }
+
+        .emoji-decor {
+            font-size: 1.5em;
+            display: inline-block;
+            animation: bounce 2s infinite ease-in-out;
+            margin: 0 10px;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .heart-container {
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .big-heart {
+            font-size: 6em;
+            animation: heartBeat 1.5s infinite, rotate 10s infinite linear;
+            display: inline-block;
+            filter: drop-shadow(0 10px 20px rgba(231, 76, 60, 0.5));
+        }
+
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+            25% {
+                transform: scale(1.2) rotate(5deg);
+            }
+            50% {
+                transform: scale(1) rotate(0deg);
+            }
+            75% {
+                transform: scale(1.2) rotate(-5deg);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            animation: fadeIn 3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* DNA Helix Animation */
+        .dna-container {
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            transform: translateY(-50%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .dna {
+            width: 100px;
+            height: 400px;
+            position: relative;
+            animation: dnaRotate 10s linear infinite;
+        }
+
+        @keyframes dnaRotate {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .verse p {
+                font-size: 1.4em;
+            }
+
+            .big-heart {
+                font-size: 4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dna-container">
+            <div class="dna">🧬</div>
+        </div>
+
+        <div class="header">
+            <h1>
+                <span class="emoji-decor">💕</span>
+                বায়োলজির ভালোবাসা
+                <span class="emoji-decor">💕</span>
+            </h1>
+            <p class="subtitle">যখন বিজ্ঞান হয় ভালোবাসার ভাষা</p>
+        </div>
+
+        <div class="content">
+            <div class="verse">
+                <p><span class="highlight">তুমি কি আমার হ্যাভারসিয়ান তন্ত্রের নিরেট অস্থি হবে?</span></p>
+            </div>
+
+            <div class="verse">
+                <p><span class="highlight">তুমি কি আমার মস্তিষ্কের সেরিব্রাম হবে?</span></p>
+            </div>
+
+            <div class="verse">
+                <p>দেবো না আক্রমণ করতে অ্যান্টিজেনকে কোনোদিনও আর...</p>
+            </div>
+
+            <div class="verse">
+                <p><span class="highlight">আর একটিবার দাও যদি আমায়</span></p>
+                <p><span class="highlight">অ্যান্টিবডি হওয়ার অধিকার।</span></p>
+            </div>
+
+            <div class="verse">
+                <p>আমি তোমার প্রোটোপ্লাজমের <span class="highlight">৮০% পানি</span> হতে চাই।</p>
+            </div>
+
+            <div class="verse">
+                <p>আমি তোমার <span class="highlight">ট্রিলিয়ন কোষের নিউক্লিয়াস</span> হতে চাই।</p>
+            </div>
+
+            <div class="verse">
+                <p>দেবো না আক্রমণ করতে—</p>
+            </div>
+
+            <div class="verse">
+                <p>আর একটিবার দাও যদি—</p>
+            </div>
+
+            <div class="verse">
+                <p>তুমি কি আমার হ্যাভারসিয়ান—</p>
+            </div>
+
+            <div class="verse">
+                <p><span class="highlight">নিষ্কাশন করে ফেলো বৃক্কের রেচন পদার্থ এবার,</span></p>
+            </div>
+
+            <div class="verse">
+                <p><span class="highlight">ফিরিয়ে আনো আমার দেহের হোমিওস্ট্যাসিস অবস্থা আবার।</span></p>
+            </div>
+        </div>
+
+        <div class="heart-container">
+            <div class="big-heart">💖</div>
+        </div>
+
+        <div class="footer">
+            <p>✨ বিজ্ঞান আর ভালোবাসার এক অপূর্ব মিলন ✨</p>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles
+        const emojis = ['🧬', '💕', '💖', '💝', '🔬', '⚗️', '💗', '❤️', '💓'];
+        
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            particle.style.animationDuration = (Math.random() * 5 + 6) + 's';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
+
+        // Create particles every 400ms
+        setInterval(createParticle, 400);
+
+        // Add hover effect to verses
+        const verses = document.querySelectorAll('.verse');
+        verses.forEach(verse => {
+            verse.addEventListener('mouseenter', function() {
+                this.style.borderLeftWidth = '8px';
+            });
+            verse.addEventListener('mouseleave', function() {
+                this.style.borderLeftWidth = '5px';
+            });
+        });
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.verse');
+            parallaxElements.forEach((el, index) => {
+                const speed = (index % 2 === 0) ? 0.5 : -0.5;
+                el.style.transform = `translateY(${scrolled * speed * 0.1}px)`;
+            });
+        });
+    </script>
+</body>
+                                                                                       </html>
